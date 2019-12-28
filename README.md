@@ -1,15 +1,22 @@
+# Udacity Bikeshare Project
+
 ### Date created
-Include the date you created this project and README file.
+December 28, 2019
 
 ### Project Title
-Replace the Project Title
+#####BikeShare project
 
 ### Description
-Describe what your project is about and what it does
+In this project, I create a GitHub repository and local repository. I work on a repo for my BikeShare project, making multiple branches, making edits to files on those branches (e.g., a readme file and your Python code), and then I commit the changes to my remote repository.
 
 ### Files used
-Include the files used
-
+I use the following files
+1. washington.csv
+2. new_york_city.csv
+3. chicago.csv
+4. bikeshare.py
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+To complete this project, I use my knowledge which I gain in the Python Foundation and Version control Nanodegree Program on Udacity. If I am stuck I consult the the following websites.
+1. https://docs.python.org/3/library/
+2. https://stackoverflow.com/
+3. https://github.com/quinnliu/gitCommands/blob/master/README.md
