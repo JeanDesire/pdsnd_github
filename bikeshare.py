@@ -1,3 +1,4 @@
+# Importing the needed libraries
 import time
 import pandas as pd
 import numpy as np
@@ -82,86 +83,86 @@ def load_data(city, month, day):
 
 
 def time_stats(df):
-    
+
     """Displays  the most frequent times of travel."""
     df['Start Time'] = pd.to_datetime(df['Start Time'])
     df['month']= df['Start Time'].dt.month
     df['day_of_week']= df['Start Time'].dt.weekday_name
-    
+
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
-    
+
     # display the most common month
     month_mode=df['month'].mode()[0]
     print('The most common month is: {}'.format(months[month_mode-1]))
-    
+
     # display the most common day of week
     print('The most common day is: {}'.format(df['day_of_week'].mode()[0]))
-    
+
     # display the most common start hour
     df['hour'] = df['Start Time'].dt.hour
     print('The most common start hour is: {}'.format(df['hour'].mode()[0]))
-    
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 
 def station_stats(df):
     """Displays statistics on the most popular stations and trip."""
-    
+
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
-    
+
     # display most commonly used start station
     print('The most common start station is: {}'.format(df['Start Station'].mode()[0]))
-    
+
     # display most commonly used end station
     print('The most common end station is: {}'.format(df['End Station'].mode()[0]))
-    
+
     # display most frequent combination of start station and end station trip
     most_common_combination = df['Start Station'].map(str) + ' to ' + df['End Station']
     print('The most popular combination is: {}'.format(most_common_combination.mode()[0]))
-        
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 
 def trip_duration_stats(df):
     """Displays  total and average trip duration."""
-    
+
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
-    
+
     # display total travel time
     total_m, total_s = divmod(df['Trip Duration'].sum(), 60)
     total_h, total_m = divmod(total_m, 60)
     print ('The total travel time is: ',total_h,' hours, ', total_m,' minutes, and ', total_s,' seconds.')
-    
-    
+
+
     # display mean travel time
     mean_m, mean_s = divmod(df['Trip Duration'].mean(), 60)
     mean_h, mean_m = divmod(mean_m, 60)
     print ('The mean travel time is: ',mean_h,' hours, ', mean_m,' minutes, and ', mean_s,' seconds.')
-    
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 
 def user_stats(df):
     """Displays statistics on bikeshare users."""
-    
+
     print('\nCalculating User Stats...\n')
     start_time = time.time()
-    
+
     # Display counts of user types
     print('The user can be broken down into \n{}'.format(df['User Type'].value_counts()))
-    
+
     # Display counts of gender
     if('Gender' not in df):
         print('Ohh sorry! Gender data is not found for Washington')
     else:
         print('The genders are \n{}'.format(df['Gender'].value_counts()))
-    
+
     # Display earliest, most recent, and most common year of birth
     if ('Birth Year' not in df):
         print('Ohh sorry! Birth year data is not found for Washington')
@@ -169,7 +170,7 @@ def user_stats(df):
         print('The Earliest birth year is: {}'.format(df['Birth Year'].min()))
         print('The most recent birth year is: {}'.format(df['Birth Year'].max()))
         print('The most common birth year is: {}'.format(df['Birth Year'].mode()[0]))
-    
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -186,21 +187,21 @@ def view_data(df):
 
         except ValueError:
             print('please enter the correct integer value')
-            
+
 
 def main():
-    
+
     while True:
         city, month, day = get_filters()
         df = load_data(city, month, day)
-        
+
         time_stats(df)
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
         view_data(df)
 
-        
+
 
         restart = input('\ndo you want to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
@@ -209,3 +210,4 @@ def main():
 
 if __name__ == "__main__":
 	main()
+# " This code is written and edited by Jean Desire HABIYAMBERE an artificial Intelligence Engineer at Shaka AI"
