@@ -9,6 +9,12 @@ BikeShare project
 ### Description
 In this project, I create a GitHub repository and local repository. I work on a repo for my BikeShare project, making multiple branches, making edits to files on those branches (e.g., a readme file and your Python code), and then I commit the changes to my remote repository.
 
+### List of software I use
+1. Pycharm
+2. Atom
+3. nano editor
+4. git as version control
+
 ### Files used
 I use the following files
 1. washington.csv
